@@ -6,3 +6,5 @@
 
 
 // javascript is a "synchronous" "single threaded" language 
+
+// synchronous means "happening or existing at the same time".

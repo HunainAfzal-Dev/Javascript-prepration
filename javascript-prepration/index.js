@@ -12,14 +12,14 @@
 
 // Hoisting: 
 
-console.log(getName)
-console.log(x)
+// console.log(getName)
+// console.log(x)
 
-var x = 2;
+// var x = 2;
 
-function getName(){
-    console.log("hello hunain 🙃")
-}
+// function getName(){
+//     console.log("hello hunain 🙃")
+// }
 
 
 // Corrected & Polished Version
@@ -43,3 +43,17 @@ function getName(){
 // ✅ Verdict
 
 // Tumhari explanation bilkul sahi thi, bas ek word tumne galti se "execution content block" bola — asal me wo execution context (memory phase) hota hai.
+
+
+
+function greet(name, callBackFun){
+    console.log("hello ", name)
+    callBackFun()
+} 
+
+function bye(){
+    console.log("byby")
+}
+var x = 1;
+
+greet("hunain", bye)

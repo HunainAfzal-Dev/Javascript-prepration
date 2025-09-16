@@ -46,14 +46,32 @@
 
 
 
-function greet(name, callBackFun){
-    console.log("hello ", name)
-    callBackFun()
-} 
+// function greet(name, callBackFun){
+//     console.log("hello ", name)
+//     callBackFun()
+// } 
 
-function bye(){
-    console.log("byby")
-}
+// function bye(){
+//     console.log("byby")
+// }
+// var x = 1;
+
+// greet("hunain", bye)
+
+
+
 var x = 1;
+a()
+b()
+console.log(x)
 
-greet("hunain", bye)
+
+function a(){
+    var x = 10;
+    console.log(x)
+}
+
+function b(){
+    var x = 5;
+    console.log(x)
+}

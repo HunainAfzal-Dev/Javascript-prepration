@@ -82,14 +82,15 @@
 let str1 = "Hunain";
 let str2 = "Arain";
 let ans = "";
+let maxLength = Math.max(str1.length , str2.length);
 
+for(let i=0; i < maxLength; i++){
+    if(i < str1.length){
+        ans += str1[i]
+    }
+    if(i < str2.length){
+        ans += str2[i]
+    }
+}
 
-
-
-// for(i=0; i <= str1.length; i++){
-//     for(j=0; j<= str2.length; j++){
-//         ans += str1[i]
-//         ans += str2[j]
-//         console.log(ans);
-//     }
-// }
+console.log(ans);

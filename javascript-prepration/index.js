@@ -75,3 +75,21 @@
 //     var x = 5;
 //     console.log(x)
 // }
+
+
+
+// combine these strings alternatively 
+let str1 = "Hunain";
+let str2 = "Arain";
+let ans = "";
+
+
+
+
+// for(i=0; i <= str1.length; i++){
+//     for(j=0; j<= str2.length; j++){
+//         ans += str1[i]
+//         ans += str2[j]
+//         console.log(ans);
+//     }
+// }

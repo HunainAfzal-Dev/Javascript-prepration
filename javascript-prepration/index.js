@@ -78,19 +78,34 @@
 
 
 
-// combine these strings alternatively 
+// // combine these strings alternatively 
+// let str1 = "Hunain";
+// let str2 = "Arain";
+// let ans = "";
+// let maxLength = Math.max(str1.length , str2.length);
+
+// for(let i=0; i < maxLength; i++){
+//     if(i < str1.length){
+//         ans += str1[i]
+//     }
+//     if(i < str2.length){
+//         ans += str2[i]
+//     }
+// }
+
+// console.log(ans);
+
+
+
 let str1 = "Hunain";
 let str2 = "Arain";
-let ans = "";
-let maxLength = Math.max(str1.length , str2.length);
 
-for(let i=0; i < maxLength; i++){
-    if(i < str1.length){
-        ans += str1[i]
+for(let i=0; i < str1.length+str2.length; i++){
+    if(i< str1.length){
+        console.log(str1[i])
     }
-    if(i < str2.length){
-        ans += str2[i]
+    if(i< str2.length){
+        console.log(str2[i])
     }
 }
 
-console.log(ans);

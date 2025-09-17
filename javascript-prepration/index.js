@@ -95,17 +95,49 @@
 
 // console.log(ans);
 
+// let str1 = "Hunain";
+// let str2 = "Arain";
+// let result = ""
+// for(let i=0; i < (str1+str2).length; i++){
+//     if(i < str1.length){
+//         result += str1[i]
+//     }
+//     if(i< str2.length){
+//         result += str2[i]
+//     }
+// }
+// console.log(result);
 
 
-let str1 = "Hunain";
-let str2 = "Arain";
 
-for(let i=0; i < str1.length+str2.length; i++){
-    if(i< str1.length){
-        console.log(str1[i])
-    }
-    if(i< str2.length){
-        console.log(str2[i])
-    }
-}
+// diffrence between forEach method and map  
 
+
+
+
+// let users = [
+//   { id: 1, name: "Ali" },
+//   { id: 2, name: "Sara" },
+//   { id: 3, name: "Hunain" }
+// ];
+
+// // har user ka naam print karna ya DOM me show karna
+// users.forEach(user => {
+//   console.log(`Sending email to: ${user.id} ${user.name}`);
+// });
+// output
+// Sending email to: 1 Ali
+// index.js:126 Sending email to: 2 Sara
+// index.js:126 Sending email to: 3 Hunain
+
+
+// let users = [
+//   { id: 1, name: "Ali" },
+//   { id: 2, name: "Sara" },
+//   { id: 3, name: "Hunain" }
+// ];
+
+// // naya array banana jisme sirf names ho
+// let names = users.map(user => user.name);
+
+// console.log(names); // ["Ali", "Sara", "Hunain"]

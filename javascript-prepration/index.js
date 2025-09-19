@@ -148,13 +148,17 @@
 
 
 
-function sumAll(...args){
-    let sum = 0;
-    console.log("args",args)
-    for(let i of args){
-        sum += i
-    }
-    return sum;
-}
+// function sumAll(...args){
+//     let sum = 0;
+//     console.log("args",args)
+//     for(let i of args){
+//         sum += i
+//     }
+//     return sum;
+// }
 
-sumAll(1,2,3,4,5,6,7,8,9)
+// sumAll(1,2,3,4,5,6,7,8,9)
+
+
+// console.log({} == {}) // false
+// console.log({} ===  {}) // false

@@ -141,3 +141,7 @@
 // let names = users.map(user => user.name);
 
 // console.log(names); // ["Ali", "Sara", "Hunain"]
+
+
+// const numArray = [1,2,3,4,5,6].map(num => num>7)
+// console.log(numArray)

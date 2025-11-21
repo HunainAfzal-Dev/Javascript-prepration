@@ -7,7 +7,7 @@ on:
 
 jobs:
   random_update:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Runs on GitHub's Ubuntu environment
 
     steps:
       - name: Checkout repo
@@ -36,4 +36,3 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-

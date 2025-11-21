@@ -1,0 +1,38 @@
+name: Daily Random Commit
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # Runs daily at midnight (UTC)
+  workflow_dispatch:   # Allows manual trigger
+
+jobs:
+  random_update:
+    runs-on: ubuntu-latest  # Runs on GitHub's Ubuntu environment
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Generate random code
+        run: |
+          # Generate random number
+          RAND=$RANDOM
+
+          # Generate date
+          DATE=$(date +"%Y-%m-%d")
+
+          # Create JS file with unique function
+          echo "function autoFunc_$RAND() { console.log('Random value: $RAND on $DATE'); }" > autoFunc_$DATE_$RAND.js
+
+          # Create HTML file with unique content
+          echo "<html><body><h2>Random Code for $DATE - ID: $RAND</h2></body></html>" > random_$DATE_$RAND.html
+
+          # Git commit
+          git config --global user.name "Daily Auto Bot"
+          git config --global user.email "bot@example.com"
+
+          git add .
+          git commit -m "Daily random commit for $DATE - ID: $RAND"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

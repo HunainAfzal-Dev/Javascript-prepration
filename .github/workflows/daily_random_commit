@@ -1,38 +1,29 @@
-name: Daily Random Commit
+name: Daily Auto Commit
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Runs daily at midnight (UTC)
-  workflow_dispatch:   # Allows manual trigger
+    - cron: '30 3 * * *'   # daily (UTC)
+  workflow_dispatch:
 
 jobs:
-  random_update:
-    runs-on: ubuntu-latest  # Runs on GitHub's Ubuntu environment
+  commit-job:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Generate random code
+      - name: Make daily change
         run: |
-          # Generate random number
-          RAND=$RANDOM
+          echo "// Updated on $(date)" >> javascript-prepration/index.js
 
-          # Generate date
-          DATE=$(date +"%Y-%m-%d")
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add javascript-prepration/index.js
+          git commit -m "Daily automated update" || echo "No changes to commit"
 
-          # Create JS file with unique function
-          echo "function autoFunc_$RAND() { console.log('Random value: $RAND on $DATE'); }" > autoFunc_$DATE_$RAND.js
-
-          # Create HTML file with unique content
-          echo "<html><body><h2>Random Code for $DATE - ID: $RAND</h2></body></html>" > random_$DATE_$RAND.html
-
-          # Git commit
-          git config --global user.name "Daily Auto Bot"
-          git config --global user.email "bot@example.com"
-
-          git add .
-          git commit -m "Daily random commit for $DATE - ID: $RAND"
+      - name: Push changes
+        run: |
           git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
